@@ -1,4 +1,3 @@
-import Promise = require('bluebird')
 import path = require('path')
 import http = require('http')
 import finalhandler = require('finalhandler')
@@ -13,8 +12,5 @@ const serverHandler = (req: http.ServerRequest, res: http.ServerResponse) => {
 export const createSampleServer = () => {
     let server = http.createServer(serverHandler)
 
-    Promise.promisify(server.listen)
-    Promise.promisify(server.close)
     return server
 }
-

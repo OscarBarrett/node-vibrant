@@ -130,7 +130,7 @@ Field          | Default                         | Description
 ##### `Resolvable<T>`
 
 ```ts
-export type Resolvable<T> = T | Bluebird<T>
+export type Resolvable<T> = T | Promise<T>
 ```
 
 ##### `Quantizer`
@@ -160,7 +160,7 @@ export interface Filter {
 }
 ```
 
-#### `getPalette(cb?: Callback<Palette>): Bluebird<Palette>`
+#### `getPalette(cb?: Callback<Palette>): Promise<Palette>`
 
 Name | Description
 ---- | -----------------
@@ -174,7 +174,7 @@ export interface Callback<T> {
 }
 ```
 
-#### `getSwatches(cb?: Callback<Palette>): Bluebird<Palette>`
+#### `getSwatches(cb?: Callback<Palette>): Promise<Palette>`
 Alias of `getPalette`.
 
 ### `Vibrant.Builder`
@@ -222,10 +222,10 @@ Sets `opts.generator` to `generator`. Returns this `Builder` instance.
 #### `build(): Vibrant`
 Builds and returns a `Vibrant` instance as configured.
 
-#### `getPalette(cb?: Callback<Palette>): Bluebird<Palette>`
+#### `getPalette(cb?: Callback<Palette>): Promise<Palette>`
 Builds a `Vibrant` instance as configured and calls its `getPalette` method.
 
-#### `getSwatches(cb? Callback<Palette>): Bluebird<Palette>`
+#### `getSwatches(cb? Callback<Palette>): Promise<Palette>`
 Alias of `getPalette`.
 
 ### `Vibrant.Swatch`
